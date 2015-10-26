@@ -1,2 +1,2 @@
 # UbuconQuiz
-Quiz Programm from ubucon Deutschland
+Quiz Programm from ubucon germany
