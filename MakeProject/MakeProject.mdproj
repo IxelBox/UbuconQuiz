@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ItemType>PackagingProject</ItemType>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A6E8D6A9-67F9-47D5-B2C2-18B586679DBA}</ProjectGuid>
+    <Packages>
+      <Packages>
+        <Package name="Linux Binärdateien">
+          <Builder targetFile="..\UbuconQuiz.tar.gz" platform="Linux" configuration="Release|x86" ctype="BinariesZipPackageBuilder">
+            <ChildEntries>
+              <SolutionItemReference path="..\UbuconQuiz\UbuconQuiz.csproj" />
+              <SolutionItemReference path="..\hyena\Hyena\Hyena.csproj" />
+              <SolutionItemReference path="..\hyena\Hyena.Data.Sqlite\Hyena.Data.Sqlite.csproj" />
+              <SolutionItemReference path="..\hyena\Hyena.Gui\Hyena.Gui.csproj" />
+            </ChildEntries>
+            <RootEntry path="..\UbuconQuiz.sln" id=":root:" />
+          </Builder>
+        </Package>
+        <Package name="Tarball">
+          <Builder TargetDirectory=".." DefaultConfiguration="Release|x86" ctype="TarballDeployTarget">
+            <ChildEntries>
+              <SolutionItemReference path="..\UbuconQuiz\UbuconQuiz.csproj" />
+              <SolutionItemReference path="..\hyena\Hyena\Hyena.csproj" />
+              <SolutionItemReference path="..\hyena\Hyena.Data.Sqlite\Hyena.Data.Sqlite.csproj" />
+              <SolutionItemReference path="..\hyena\Hyena.Gui\Hyena.Gui.csproj" />
+            </ChildEntries>
+            <ExcludedFiles>
+              <File>Hyena.Gui,ProgramFiles,Hyena.dll.mdb</File>
+              <File>Hyena.Gui,ProgramFiles,Hyena.Gui.dll.mdb</File>
+              <File>Hyena.Data.Sqlite,ProgramFiles,Hyena.dll.mdb</File>
+              <File>Hyena.Data.Sqlite,ProgramFiles,Hyena.Data.Sqlite.dll.mdb</File>
+              <File>Hyena,ProgramFiles,Hyena.dll.mdb</File>
+              <File>UbuconQuiz,ProgramFiles,Hyena.Gui.dll.mdb</File>
+              <File>UbuconQuiz,ProgramFiles,Hyena.Data.Sqlite.dll.mdb</File>
+              <File>UbuconQuiz,ProgramFiles,Hyena.dll.mdb</File>
+            </ExcludedFiles>
+            <RootEntry path="..\UbuconQuiz.sln" id=":root:" />
+          </Builder>
+        </Package>
+      </Packages>
+    </Packages>
+    <ReleaseVersion>1.1</ReleaseVersion>
+  </PropertyGroup>
+</Project>
